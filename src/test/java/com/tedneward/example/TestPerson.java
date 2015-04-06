@@ -39,12 +39,11 @@ public class TestPerson {
     p.setAge(20);
     p.setName("Fird Birfle");
     p.setSalary(195750.22);
-    
     assertEquals("[Person name:Fird Birfle age:20 salary:195750.22]", p.toString());
   }
   
   @Test
-  public void exercisePesonEquals() {
+  public void exercisePersonEquals() {
     Person p1 = new Person("Ted", 43, 250000);
     Person p2 = p1;
     assertEquals(p1, p2);
@@ -64,7 +63,7 @@ public class TestPerson {
     assertFalse(p1.equals(null));
     assertFalse(p1.equals(new Integer(27)));
   }
-/*
+
   @Test
   public void useAgeComparator() {
     List<Person> people = Person.getNewardFamily();
@@ -80,7 +79,7 @@ public class TestPerson {
   public void useNaturalComparison() {
     List<Person> people = Person.getNewardFamily();
     Collections.sort(people);
-    
+
     assertEquals(new Person("Ted", 41, 250000), people.get(0));
     assertEquals(new Person("Charlotte", 43, 150000), people.get(1));
     assertEquals(new Person("Michael", 22, 10000), people.get(2));
@@ -95,15 +94,20 @@ public class TestPerson {
     // Call addPropertyChangeListener with a PropertyChangedListener
     // that has the following code in it:
     /*
-    assertEquals("ssn", pce.getPropertyName());
-    assertEquals("", pce.getOldValue());
-    assertEquals("012-34-5678", pce.getNewValue());
-
+      assertEquals("ssn", pce.getPropertyName());
+      assertEquals("", pce.getOldValue());
+      assertEquals("012-34-5678", pce.getNewValue());
+    */
+    ted.addPropertyChangeListener((pce) -> {
+      assertEquals("ssn", pce.getPropertyName());
+      assertEquals("", pce.getOldValue());
+      assertEquals("012-34-5678", pce.getNewValue());
+    });
 
     // ============ YOUR CHANGES END HERE
-    
+
     assertEquals(false, ted.getPropertyChangeFired());
     ted.setSSN("012-34-5678");
-    assertEquals(true, ted.getPropertyChangeFired());*/
+    assertEquals(true, ted.getPropertyChangeFired());
   }
-//}
+}
