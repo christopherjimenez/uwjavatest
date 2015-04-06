@@ -23,18 +23,24 @@ public class Person {
   public int getAge() {
     return age;
   }
-  
+  public void setAge(int ageToSet) {age = ageToSet; }
+
   public String getName() {
     return name;
   }
-  
+
+  public void setName( String newName ) {name = newName; }
+
   public double getSalary() {
     return salary;
   }
+
+  public void setSalary(double newSalary) {salary = newSalary; }
   
   public String getSSN() {
     return ssn;
   }
+
   public void setSSN(String value) {
     String old = ssn;
     ssn = value;
@@ -59,7 +65,7 @@ public class Person {
   }
   
   public boolean equals(Person other) {
-    return (this.name.equals(p.name) && this.age == p.age);
+    return (this.name.equals(other.name) && this.age == other.age);
   }
 
   public String tostring() {

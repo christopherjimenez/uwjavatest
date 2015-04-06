@@ -75,13 +75,13 @@ public class Hello
 		final int foo = 12;
 		p2.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {
-				foo = 24;
+				//foo = 24;
 				System.out.println("Object " + evt.getSource() + " says that " +
 					evt.getPropertyName() + " is now " + evt.getNewValue() + foo);
 			}
 		} );
 		p2.addPropertyChangeListener((evt) -> {
-			foo = 24;
+			//foo = 24;
 			System.out.println("Object " + evt.getSource() + " says that " +
 				evt.getPropertyName() + " is now " + evt.getNewValue() + foo);
 		} );
